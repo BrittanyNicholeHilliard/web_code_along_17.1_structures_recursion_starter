@@ -5,16 +5,43 @@ class listNode {
   }
 }
 
-function search(head, value) {
-  let current = head
-  while (current !== null) {
-    if (current.value === value) {
-      return true
-    }
-    current = current.next
-  }
+/*3 rules for recursion
+must be a base case - condition you must get to to break out of recursive function
+change its state repeatedly to move forward to base case
+call itself*/
+
+// function search(head, value) {
+//   let current = head
+//   while (current !== null) {
+//     if (current.value === value) {
+//       return true
+//     }
+//     current = current.next
+//   }
+//   return false
+// }
+
+
+// 3 -> 6-> 9
+function search(head, value){
+current = head; 
+if (current===null) {
   return false
+} if (current.value === value) {
+  return true
 }
+return search(current.next, value)
+}
+
+
+search(3, 0)
+// if (current !== null) {
+//   if (current.value === value) {
+//     return true;
+//   }
+//  return search(current.next, value)
+// } else return false
+// }
 
 // This function searches a linked list built from the provided listNode class, returning True if an element is found in the linked list. It returns False otherwise.
 

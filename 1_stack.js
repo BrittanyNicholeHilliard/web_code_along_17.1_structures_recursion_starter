@@ -1,12 +1,12 @@
 class stack {
     constructor() {
-
+      this.data = []
     }
     push(value) {
-
+      this.data.unshift(value)
     }
     pop() {
-
+      return this.data.shift()
     }
   }
 
